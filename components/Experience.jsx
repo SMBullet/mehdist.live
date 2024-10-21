@@ -10,21 +10,8 @@ import { FaGithub } from "react-icons/fa"; // Importing GitHub icon
 const Experience = () => {
   const experiences = [
     {
-      title: "Internship: Web Development (Summer 2023)",
-      date: "Summer 2023",
-      location: "Marrakech, Morocco",
-      description: (
-        <>
-          I contributed to the creation of a full-stack web application for <span className="text-accent">WLC</span>, 
-          by developing the backend of their food ordering platform <span className="text-accent">&apos;eat.ma&apos;</span> using 
-          <span className="text-accent">Laravel</span> and <span className="text-accent">Bootstrap</span>.
-        </>
-      ),
-      github: "https://github.com/SMBullet/eat.ma"
-    },
-    {
       title: "Internship PFA: Development of a Penetration Testing Automation Application",
-      date: "2022",
+      date: "Summer 2024",
       location: "Marrakech, Morocco",
       description: (
         <>
@@ -35,6 +22,19 @@ const Experience = () => {
         </>
       ),
       github: "https://github.com/SMBullet/VulnHunter"
+    },
+    {
+      title: "Internship: Web Development",
+      date: "Summer 2023",
+      location: "Marrakech, Morocco",
+      description: (
+        <>
+          I contributed to the creation of a full-stack web application for <span className="text-accent">WLC</span>, 
+          by developing the backend of their food ordering platform <span className="text-accent">&apos;eat.ma&apos;</span> using 
+          <span className="text-accent">Laravel</span> and <span className="text-accent">Bootstrap</span>.
+        </>
+      ),
+      github: "https://github.com/SMBullet/eat.ma"
     },
   ];
 

@@ -10,14 +10,16 @@ const certificationsData = [
     title: "Certified AppSec Practitioner (CAP)",
     institution: "The SecOps Group",
     year: "2024",
-    link: "https://www.secops.org/cap",
+    link: `https://secops.group/certificate-validation`,
     image: "/certifications/1707232957468.jpeg",
+    certificateId: "8377487",
+    name: "Mehdi"
   },
   {
     title: "arcX Cyber Threat Intelligence 101",
     institution: "arcX",
-    year: "2024",
-    link: "https://arcx.com/cyber-threat-intelligence-101",
+    year: "2023",
+    link: "https://arcx.io/verify-certificate?id=4704696c04cff9d2a47625d4b3fcc2ad29109d00&k=aa71a90338254ea09a7209c555ce7915",
     image: "/certifications/1679159067212.jpeg",
   },
 ];
@@ -47,7 +49,6 @@ const tryHackMeData = {
       institution: "TryHackMe",
       year: "2024",
       image: "/certifications/THM-STSEMYLBE9.png",
-      link: "https://tryhackme.com/room/jrpenetrationtester", // Add relevant link
     },
   ],
 };
@@ -80,6 +81,12 @@ const Certifications = () => {
                   />
                   <h2 className="text-2xl font-bold text-gray-200">{certification.title}</h2>
                   <p className="text-gray-400">{certification.institution} - {certification.year}</p>
+                  {certification.certificateId && certification.name && (
+                    <p className="text-gray-400 mt-1">Certificate ID: {certification.certificateId}</p>
+                  )}
+                  {certification.name && (
+                    <p className="text-gray-400 mt-1">Name: {certification.name}</p>
+                  )}
                   <a 
                     href={certification.link} 
                     target="_blank" 
@@ -118,15 +125,6 @@ const Certifications = () => {
                     />
                     <h2 className="text-2xl font-bold text-gray-200">{certification.title}</h2>
                     <p className="text-gray-400">{certification.institution} - {certification.year}</p>
-                    <a 
-                      href={certification.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="mt-2 inline-flex items-center space-x-2 text-red-500 hover:text-red-600 transition duration-300"
-                    >
-                      <span>View Certification</span>
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
                   </div>
                 ))}
               </div>
@@ -135,20 +133,25 @@ const Certifications = () => {
             {/* AWS Badges */}
             <div className="mt-10">
               <h2 className="text-3xl font-bold mb-4 text-gray-200">My AWS Badges</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="flex flex-wrap gap-4"> {/* Use flex-wrap for better alignment */}
                 {awsBadgesData.map((badge, index) => (
-                  <a 
+                  <div 
                     key={index} 
-                    href={badge.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                    className="flex flex-col bg-gray-900/20 border border-gray-700 rounded-lg p-2 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg" 
                   >
-                    <img 
-                      src={badge.image} 
-                      alt={badge.alt} 
-                      className="rounded-lg shadow-md"
-                    />
-                  </a>
+                    <a 
+                      href={badge.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center"
+                    >
+                      <img 
+                        src={badge.image} 
+                        alt={badge.alt} 
+                        className="rounded-md w-28 h-28 transition duration-300 hover:scale-105" // Increased size
+                      />
+                    </a>
+                  </div>
                 ))}
               </div>
             </div>
