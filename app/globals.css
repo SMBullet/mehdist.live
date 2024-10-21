@@ -2,26 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 255 255 255; /* White */
+    --foreground: 0 0 0; /* Black */
+    --card: 255 255 255; /* White */
+    --card-foreground: 0 0 0; /* Black */
+    --popover: 255 255 255; /* White */
+    --popover-foreground: 0 0 0; /* Black */
+    --primary: 220 20 60; /* Red */
+    --primary-foreground: 255 255 255; /* White */
+    --secondary: 255 0 0; /* Bright Red */
+    --secondary-foreground: 255 255 255; /* White */
+    --muted: 240 240 240; /* Light gray */
+    --muted-foreground: 0 0 0; /* Black */
+    --accent: 220 20 60; /* Red */
+    --accent-foreground: 255 255 255; /* White */
+    --destructive: 255 0 0; /* Bright Red */
+    --destructive-foreground: 255 255 255; /* White */
+    --border: 200 0 0; /* Dark Red */
+    --input: 255 255 255; /* White */
+    --ring: 220 20 60; /* Red */
+    --chart-1: 255 99 71; /* Light Red */
+    --chart-2: 220 20 60; /* Red */
+    --chart-3: 178 34 34; /* Firebrick */
+    --chart-4: 255 69 0; /* Red-Orange */
+    --chart-5: 255 140 0; /* Dark Orange */
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 30 30 30; /* Dark Gray */
+    --foreground: 255 255 255; /* White */
+    --card: 50 50 50; /* Dark Gray */
+    --card-foreground: 255 255 255; /* White */
+    --popover: 50 50 50; /* Dark Gray */
+    --popover-foreground: 255 255 255; /* White */
+    --primary: 255 69 0; /* Red-Orange */
+    --primary-foreground: 0 0 0; /* Black */
+    --secondary: 255 0 0; /* Bright Red */
+    --secondary-foreground: 255 255 255; /* White */
+    --muted: 50 50 50; /* Dark Gray */
+    --muted-foreground: 200 200 200; /* Light Gray */
+    --accent: 30 30 30; /* Dark Gray */
+    --accent-foreground: 255 255 255; /* White */
+    --destructive: 255 0 0; /* Bright Red */
+    --destructive-foreground: 255 255 255; /* White */
+    --border: 100 100 100; /* Medium gray */
+    --input: 50 50 50; /* Dark Gray */
+    --ring: 255 0 0; /* Bright Red */
+    --chart-1: 220 20 60; /* Red */
+    --chart-2: 255 0 0; /* Bright Red */
+    --chart-3: 178 34 34; /* Firebrick */
+    --chart-4: 255 69 0; /* Red-Orange */
+    --chart-5: 255 140 0; /* Dark Orange */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.animate-moving-gradient {
+  background-size: 200% 200%;
+  animation: gradient-moving 5s ease-in-out infinite;
+  background-image: linear-gradient(to right, rgba(220, 20, 60, 1), rgba(255, 99, 71, 1)); /* Red gradient colors */
+}
+
+/* Clicking animation */
+.toggle-button {
+  transition: transform 0.2s ease;
+}
+
+.toggle-button:active {
+  transform: scale(0.9);
+}
+
+@keyframes gradient-moving {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
