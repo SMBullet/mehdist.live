@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';  // Importing Next.js Image component
 
 const certificationsData = [
   {
@@ -74,10 +75,12 @@ const Certifications = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {certificationsData.map((certification, index) => (
                 <div key={index} className="flex flex-col bg-gray-900/20 border border-gray-700 rounded-lg p-4">
-                  <img 
+                  <Image 
                     src={certification.image} 
                     alt={`${certification.title} Image`} 
                     className="mb-2 rounded-md"
+                    width={500}  // Specify appropriate width
+                    height={300} // Specify appropriate height
                   />
                   <h2 className="text-2xl font-bold text-gray-200">{certification.title}</h2>
                   <p className="text-gray-400">{certification.institution} - {certification.year}</p>
@@ -104,10 +107,12 @@ const Certifications = () => {
             <div className="mt-10 flex flex-col items-start">
               <h2 className="text-3xl font-bold mb-4 text-gray-200">My TryHackMe Badge</h2>
               <a href={tryHackMeData.badge.link} target="_blank" rel="noopener noreferrer">
-                <img 
+                <Image 
                   src={tryHackMeData.badge.imageUrl} 
                   alt={tryHackMeData.badge.alt} 
                   className="rounded-lg shadow-md mb-6"
+                  width={300} // Specify appropriate width
+                  height={150} // Specify appropriate height
                 />
               </a>
             </div>
@@ -118,10 +123,12 @@ const Certifications = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {tryHackMeData.certifications.map((certification, index) => (
                   <div key={index} className="flex flex-col bg-gray-900/20 border border-gray-700 rounded-lg p-4">
-                    <img 
+                    <Image 
                       src={certification.image} 
                       alt={`${certification.title} Image`} 
                       className="mb-2 rounded-md"
+                      width={500} // Specify appropriate width
+                      height={300} // Specify appropriate height
                     />
                     <h2 className="text-2xl font-bold text-gray-200">{certification.title}</h2>
                     <p className="text-gray-400">{certification.institution} - {certification.year}</p>
@@ -145,10 +152,12 @@ const Certifications = () => {
                       rel="noopener noreferrer"
                       className="flex flex-col items-center"
                     >
-                      <img 
+                      <Image 
                         src={badge.image} 
                         alt={badge.alt} 
                         className="rounded-md w-28 h-28 transition duration-300 hover:scale-105" // Increased size
+                        width={112}  // Specify appropriate width
+                        height={112} // Specify appropriate height
                       />
                     </a>
                   </div>

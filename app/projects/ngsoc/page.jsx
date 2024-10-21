@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -41,7 +41,7 @@ const Ngsoc = () => {
               Next-Gen Security Operations Center (NGSOC)
             </h2>
             <p className="text-lg leading-relaxed text-gray-300">
-              The Next-Gen Security Operations Center (NGSOC) is designed to enhance an organization's cybersecurity posture through real-time monitoring and incident response capabilities. This comprehensive platform integrates various open-source tools to provide robust security monitoring and threat management.
+              The Next-Gen Security Operations Center (NGSOC) is designed to enhance an organization&apos;s cybersecurity posture through real-time monitoring and incident response capabilities. This comprehensive platform integrates various open-source tools to provide robust security monitoring and threat management.
             </p>
             <a href="#" rel="noopener noreferrer" className="inline-flex items-center text-red-500 hover:text-red-700 mt-4">
               <FaGithub className="mr-2" /> GitHub Repository
@@ -54,7 +54,7 @@ const Ngsoc = () => {
           <CardContent>
             <h3 className="text-xl font-semibold text-white">My Contributions</h3>
             <ul className="list-disc list-inside text-gray-300 mt-4">
-              <li>Configured <strong>Wazuh</strong> for security monitoring and alert generation.</li>
+              <li>Configured <strong>Wazuh&apos;s</strong> for security monitoring and alert generation.</li>
               <li>Integrated <strong>TheHive</strong> for efficient incident management.</li>
               <li>Developed real-time dashboards with <strong>Grafana</strong> to visualize security metrics.</li>
               <li>Utilized <strong>Graylog</strong> for centralized log management.</li>
