@@ -10,9 +10,6 @@ import Image from 'next/image';
 
 const screenshots = [
   '/devsecops/1.png',
-  '/devsecops/2.png',
-  '/devsecops/3.png',
-  '/devsecops/4.png',
 ];
 
 const DevSecOps = () => {
