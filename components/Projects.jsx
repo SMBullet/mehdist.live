@@ -12,109 +12,57 @@ const projects = [
     title: "DevSecOps Microservices Application Deployment",
     description: (
       <>
-        In this project, we developed and deployed a microservices-based web application using Spring Boot for the backend and React for the frontend. The application was containerized with Docker and deployed on Kubernetes, with a fully automated CI/CD pipeline built using Jenkins. We followed DevSecOps practices by integrating security and quality tools such as Trivy and SonarQube, ensuring continuous security and code quality checks throughout the development lifecycle.
+        Developed a secure microservices-based web application using Spring Boot for the backend and React for the frontend. We containerized the application with Docker and deployed it on Kubernetes. A fully automated CI/CD pipeline was built using Jenkins, incorporating security and quality tools like Trivy and SonarQube.
       </>
     ),
     tools: ["Spring Boot", "React", "Docker", "Jenkins", "Kubernetes", "Trivy", "SonarQube", "Maven"],
-    features: [
-      "Fully automated CI/CD pipeline with Jenkins",
-      "Containerized application using Docker",
-      "Deployed on Kubernetes with scalability in mind",
-      "Security vulnerability scanning using Trivy",
-      "Code quality analysis with SonarQube"
-    ],
-    problemSolved: (
-      <>
-        This project addresses the need for secure, scalable, and efficient application deployment in a cloud environment. By leveraging DevSecOps principles and integrating security into every step of the development process, it improves the reliability and security of the application, while automating the build and deployment process.
-      </>
-    ),
     github: "https://github.com/SMBullet/DevSecOps",
-    link: "/projects/devsecops-p" // Link to the project page
+    link: "/projects/devsecops-p"
   },
   {
     title: "Next-Gen Security Operations Center (NGSOC) Deployment",
     description: (
       <>
-        In this semester-end project, my colleague and I designed and deployed a fully functional Security Operations Center (SOC) using Wazuh, a comprehensive open-source security monitoring tool. The SOC integrates with other open-source solutions to enhance its capabilities, providing robust real-time security monitoring and centralized alert management.
+        Designed and deployed a fully functional Security Operations Center (SOC) using Wazuh. The SOC integrates with open-source tools to provide robust real-time security monitoring and centralized alert management.
       </>
     ),
-    tools: ["Wazuh", "Open Source Tools"],
-    features: [
-      "Real-time security monitoring and alerts",
-      "Centralized alert management and reporting",
-      "Scalable architecture for growing needs"
-    ],
-    problemSolved: (
-      <>
-        This project addresses the need for enhanced security monitoring and incident response capabilities. By leveraging open-source tools and a scalable architecture, it significantly improves an organization's ability to detect and respond to security threats in real-time.
-      </>
-    ),
+    tools: ["Wazuh", "Grafana", "Graylog", "Suricata ids", "VirusTotal API", "TheHive"],
     github: "https://github.com/yourusername/NGSOC",
-    link: "/projects/ngsoc" // Link to the project page
+    link: "/projects/ngsoc"
   },
   {
     title: "AI-Enhanced Intrusion Detection System",
     description: (
       <>
-        This project involves the development of an Intrusion Detection System (IDS) with advanced AI integration. The system uses machine learning algorithms to analyze network traffic and detect potential threats, providing real-time alerts and customizable rules for enhanced security management.
+        Developed an Intrusion Detection System (IDS) that uses AI-driven algorithms to analyze network traffic, detect potential threats, and provide real-time alerts for enhanced security management.
       </>
     ),
-    tools: ["Python", "Bash Scripting"],
-    features: [
-      "AI-driven threat detection and analysis",
-      "Real-time alerts and notifications",
-      "Customizable detection rules and configurations"
-    ],
-    problemSolved: (
-      <>
-        The IDS improves the detection of potential security threats by utilizing AI to analyze and interpret network traffic patterns. This results in more accurate threat identification and quicker response times, enhancing overall network security.
-      </>
-    ),
+    tools: ["Python", "Bash Scripting", "AI Algorithms"],
     github: "https://github.com/Eljakani/deeplearning-ids",
-    link: "/projects/ids" // Link to the project page
+    link: "/projects/ids"
   },
   {
     title: "Advanced Password Generator and Strength Checker",
     description: (
       <>
-        This project offers a password generator and strength checker tool built with React.js. Users can generate strong passwords and assess their strength based on various criteria. The tool includes customizable rules for password generation, ensuring that users create secure passwords tailored to their needs.
+        A password generator and strength checker tool built with React.js, allowing users to generate strong passwords and assess their strength based on customizable rules and criteria.
       </>
     ),
-    tools: ["Reactjs"],
-    features: [
-      "Generation of secure, random passwords",
-      "Password strength assessment and feedback",
-      "Customizable password rules and criteria"
-    ],
-    problemSolved: (
-      <>
-        Weak passwords are a significant security vulnerability. This tool helps mitigate this issue by providing users with strong password options and assessing the strength of their passwords, thereby enhancing overall cybersecurity practices.
-      </>
-    ),
+    tools: ["React.js"],
     github: "https://github.com/SMBullet/MutePass",
-    website: "https://mute-pass.vercel.app/", // Adding the website link
-    link: "/projects/password-generator" // Link to the project page
+    website: "https://mute-pass.vercel.app/",
+    link: "/projects/password-generator"
   },
   {
     title: "Automated Deployment of FTP, DHCP, and Mailing Servers on Debian",
     description: (
       <>
-        This project automates the setup and deployment of FTP, DHCP, and mailing servers on Debian-based systems using Bash scripting. The automation reduces the need for manual intervention and ensures consistent and reliable server configurations.
+        Automated the setup and deployment of FTP, DHCP, and mailing servers using Bash scripting on Debian-based systems, reducing the need for manual intervention.
       </>
     ),
-    tools: ["Bash Scripting"],
-    features: [
-      "Automated server installation and configuration",
-      "Minimized manual setup and error potential",
-      "Consistent and repeatable deployment process"
-    ],
-    problemSolved: (
-      <>
-        Manual server deployment can be time-consuming and prone to errors. This automation script simplifies and accelerates the process, providing a more efficient and error-free method for setting up essential server services.
-      </>
-    ),
+    tools: ["Bash Scripting", "Debian"],
     github: "https://github.com/Eljakani/FDM",
-    link: "/projects/FDM" // Link to the project page
+    link: "/projects/FDM"
   }
 ];
 
