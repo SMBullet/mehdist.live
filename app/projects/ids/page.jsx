@@ -44,7 +44,7 @@ const CogniGuard = () => {
             <p className="text-gray-300 mt-4">
               For the complete code and additional details, visit the project repository: 
               <a 
-                href="https://github.com/Eljakani/deeplearning-ids" 
+                href="https://github.com/SMBullet/deeplearning-ids" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-red-500 hover:text-red-300 transition-colors duration-200 flex items-center"

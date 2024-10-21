@@ -9,6 +9,29 @@ import Link from 'next/link'; // Import Link from Next.js
 
 const projects = [
   {
+    title: "DevSecOps Microservices Application Deployment",
+    description: (
+      <>
+        In this project, we developed and deployed a microservices-based web application using Spring Boot for the backend and React for the frontend. The application was containerized with Docker and deployed on Kubernetes, with a fully automated CI/CD pipeline built using Jenkins. We followed DevSecOps practices by integrating security and quality tools such as Trivy and SonarQube, ensuring continuous security and code quality checks throughout the development lifecycle.
+      </>
+    ),
+    tools: ["Spring Boot", "React", "Docker", "Jenkins", "Kubernetes", "Trivy", "SonarQube", "Maven"],
+    features: [
+      "Fully automated CI/CD pipeline with Jenkins",
+      "Containerized application using Docker",
+      "Deployed on Kubernetes with scalability in mind",
+      "Security vulnerability scanning using Trivy",
+      "Code quality analysis with SonarQube"
+    ],
+    problemSolved: (
+      <>
+        This project addresses the need for secure, scalable, and efficient application deployment in a cloud environment. By leveraging DevSecOps principles and integrating security into every step of the development process, it improves the reliability and security of the application, while automating the build and deployment process.
+      </>
+    ),
+    github: "https://github.com/SMBullet/DevSecOps",
+    link: "/projects/devsecops-p" // Link to the project page
+  },
+  {
     title: "Next-Gen Security Operations Center (NGSOC) Deployment",
     description: (
       <>

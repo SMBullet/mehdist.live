@@ -9,20 +9,20 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Image from 'next/image';
 
 const screenshots = [
-  '/ngsoc/1.jpeg',
-  '/ngsoc/2.jpeg',
-  '/ngsoc/3.jpeg',
-  '/ngsoc/4.jpeg',
+  '/devsecops/1.png',
+  '/devsecops/2.png',
+  '/devsecops/3.png',
+  '/devsecops/4.png',
 ];
 
-const Ngsoc = () => {
+const DevSecOps = () => {
   const handleBackClick = (e) => {
     e.preventDefault();
     window.history.back();
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6 pb-0 mb-10" id="ngsoc">
+    <div className="min-h-screen flex items-center justify-center p-6 pb-0 mb-10" id="devsecops">
       <motion.div
         className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6"
         initial={{ opacity: 0, y: 20 }}
@@ -38,12 +38,15 @@ const Ngsoc = () => {
         <Card className="shadow-xl rounded-2xl p-6 bg-transparent col-span-1 md:col-span-3">
           <CardContent>
             <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-700 mb-4">
-              Next-Gen Security Operations Center (NGSOC)
+              DevSecOps Microservices Web Application
             </h2>
             <p className="text-lg leading-relaxed text-gray-300">
-              The Next-Gen Security Operations Center (NGSOC) is designed to enhance an organization's cybersecurity posture through real-time monitoring and incident response capabilities. This comprehensive platform integrates various open-source tools to provide robust security monitoring and threat management.
+              This project is a microservices-based web application developed using Spring Boot for the backend and React for the frontend. 
+              We containerized the app using Docker and deployed it in a Kubernetes cluster. Security and quality tools such as Trivy and SonarQube 
+              were integrated into the CI/CD pipeline, which was built using Jenkins. This approach follows DevSecOps principles to ensure 
+              continuous security, scalability, and efficiency.
             </p>
-            <a href="#" rel="noopener noreferrer" className="inline-flex items-center text-red-500 hover:text-red-700 mt-4">
+            <a href="https://github.com/SMBullet/DevSecOps" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-red-500 hover:text-red-700 mt-4">
               <FaGithub className="mr-2" /> GitHub Repository
             </a>
           </CardContent>
@@ -54,12 +57,12 @@ const Ngsoc = () => {
           <CardContent>
             <h3 className="text-xl font-semibold text-white">My Contributions</h3>
             <ul className="list-disc list-inside text-gray-300 mt-4">
-              <li>Configured <strong>Wazuh</strong> for security monitoring and alert generation.</li>
-              <li>Integrated <strong>TheHive</strong> for efficient incident management.</li>
-              <li>Developed real-time dashboards with <strong>Grafana</strong> to visualize security metrics.</li>
-              <li>Utilized <strong>Graylog</strong> for centralized log management.</li>
-              <li>Implemented <strong>Suricata</strong> for network intrusion detection.</li>
-              <li>Leveraged the <strong>VirusTotal API</strong> for enriched threat intelligence.</li>
+              <li>Developed the backend API using <strong>Spring Boot</strong> and connected it with <strong>MySQL</strong>.</li>
+              <li>Designed the frontend using <strong>React</strong> for a smooth and responsive user experience.</li>
+              <li>Implemented <strong>Docker</strong> to containerize the microservices and ensured seamless deployment in <strong>Kubernetes</strong>.</li>
+              <li>Integrated <strong>Jenkins</strong> to build a CI/CD pipeline for automating the build, test, and deployment processes.</li>
+              <li>Utilized <strong>Trivy</strong> for vulnerability scanning of Docker images.</li>
+              <li>Applied <strong>SonarQube</strong> for static code analysis to ensure code quality and security.</li>
             </ul>
           </CardContent>
         </Card>
@@ -69,12 +72,13 @@ const Ngsoc = () => {
           <CardContent>
             <h3 className="text-xl font-semibold text-white">Technologies Used</h3>
             <div className="flex flex-wrap gap-3 mt-4">
-              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Wazuh</Badge>
-              <Badge variant="secondary" className="bg-red-500/20 text-red-500">TheHive</Badge>
-              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Grafana</Badge>
-              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Graylog</Badge>
-              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Suricata</Badge>
-              <Badge variant="secondary" className="bg-red-500/20 text-red-500">VirusTotal API</Badge>
+              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Spring Boot</Badge>
+              <Badge variant="secondary" className="bg-red-500/20 text-red-500">React</Badge>
+              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Docker</Badge>
+              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Kubernetes</Badge>
+              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Jenkins</Badge>
+              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Trivy</Badge>
+              <Badge variant="secondary" className="bg-red-500/20 text-red-500">SonarQube</Badge>
             </div>
           </CardContent>
         </Card>
@@ -84,12 +88,12 @@ const Ngsoc = () => {
           <CardContent>
             <h3 className="text-xl font-semibold text-white">Challenges Addressed</h3>
             <div className="space-y-2 text-gray-300 mt-4">
-              <p>Through the NGSOC, I addressed several key challenges:</p>
+              <p>Key challenges addressed during the project:</p>
               <ul className="list-disc list-inside">
-                <li><strong>Proactive Threat Detection</strong>: Continuous monitoring of systems and network traffic.</li>
-                <li><strong>Centralized Incident Response</strong>: Unified management of security incidents.</li>
-                <li><strong>Enhanced Visibility</strong>: Real-time dashboards for immediate insights into security status.</li>
-                <li><strong>Improved Threat Intelligence</strong>: Access to external threat data for informed decision-making.</li>
+                <li><strong>Continuous Integration and Delivery</strong>: Automated end-to-end pipeline with Jenkins.</li>
+                <li><strong>Security Integration</strong>: Automated vulnerability scans and code analysis with Trivy and SonarQube.</li>
+                <li><strong>Scalable Deployment</strong>: Kubernetes orchestration for scaling and managing the microservices architecture.</li>
+                <li><strong>Quality Assurance</strong>: Code quality checks and static analysis for better maintainability and security.</li>
               </ul>
             </div>
           </CardContent>
@@ -106,8 +110,28 @@ const Ngsoc = () => {
                 </a>
               </li>
               <li>
+                <a href="https://github.com/hakimziyach" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                  Assiri Abdelhakim
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/moadza" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                  Elmotassadeq Moad
+                </a>
+              </li>
+              <li>
                 <a href="https://github.com/Yassinom" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
                   Essaleh Yassine
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Whutashame" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                  Berrah Chouaib
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/rekkles0" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                  Knioui Brahim
                 </a>
               </li>
             </ul>
@@ -146,4 +170,4 @@ const Ngsoc = () => {
   );
 };
 
-export default Ngsoc;
+export default DevSecOps;
