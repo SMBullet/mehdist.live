@@ -17,6 +17,13 @@ const certificationsData = [
     name: "Mehdi"
   },
   {
+    title: "ISO/IEC 27001 Information Security Associate™",
+    institution: "SkillFront",
+    year: "2024",
+    link: "https://www.skillfront.com/Badges/48181512835155",
+    image: "/certifications/ISO27001.jpeg",
+  },
+  {
     title: "arcX Cyber Threat Intelligence 101",
     institution: "arcX",
     year: "2023",
