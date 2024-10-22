@@ -21,7 +21,7 @@ const certificationsData = [
     institution: "SkillFront",
     year: "2024",
     link: "https://www.skillfront.com/Badges/48181512835155",
-    image: "/certifications/ISO27001.jpeg",
+    image: "/certifications/ISO27001.png",
   },
   {
     title: "arcX Cyber Threat Intelligence 101",
