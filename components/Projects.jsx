@@ -4,15 +4,15 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { motion } from 'framer-motion';
-import { FaGithub, FaGlobe } from "react-icons/fa"; // Importing GitHub and Globe (Website) icons
-import Link from 'next/link'; // Import Link from Next.js
+import { FaGithub, FaGlobe } from "react-icons/fa";
+import Link from 'next/link';
 
 const projects = [
   {
     title: "DevSecOps Microservices Application Deployment",
     description: (
       <>
-        Developed a secure microservices-based web application using Spring Boot for the backend and React for the frontend. We containerized the application with Docker and deployed it on Kubernetes. A fully automated CI/CD pipeline was built using Jenkins, incorporating security and quality tools like Trivy and SonarQube.
+        Built a secure microservices web app using Spring Boot and React, containerized with Docker, and deployed on Kubernetes with a fully automated CI/CD pipeline.
       </>
     ),
     tools: ["Spring Boot", "React", "Docker", "Jenkins", "Kubernetes", "Trivy", "SonarQube", "Maven"],
@@ -23,10 +23,10 @@ const projects = [
     title: "Next-Gen Security Operations Center (NGSOC) Deployment",
     description: (
       <>
-        Designed and deployed a fully functional Security Operations Center (SOC) using Wazuh. The SOC integrates with open-source tools to provide robust real-time security monitoring and centralized alert management.
+        Deployed a Security Operations Center using Wazuh for real-time security monitoring and alert management.
       </>
     ),
-    tools: ["Wazuh", "Grafana", "Graylog", "Suricata ids", "VirusTotal API", "TheHive"],
+    tools: ["Wazuh", "Grafana", "Graylog", "Suricata ids", "VirusTotal API", "TheHive", "Sysmon", "PacketBeat", "Yara"],
     github: "https://github.com/yourusername/NGSOC",
     link: "/projects/ngsoc"
   },
@@ -34,7 +34,7 @@ const projects = [
     title: "AI-Enhanced Intrusion Detection System",
     description: (
       <>
-        Developed an Intrusion Detection System (IDS) that uses AI-driven algorithms to analyze network traffic, detect potential threats, and provide real-time alerts for enhanced security management.
+        Developed an AI-driven IDS for analyzing network traffic and detecting threats in real-time.
       </>
     ),
     tools: ["Python", "Bash Scripting", "AI Algorithms"],
@@ -45,7 +45,7 @@ const projects = [
     title: "Advanced Password Generator and Strength Checker",
     description: (
       <>
-        A password generator and strength checker tool built with React.js, allowing users to generate strong passwords and assess their strength based on customizable rules and criteria.
+        Built a tool with React to generate strong passwords and assess their strength based on rules.
       </>
     ),
     tools: ["React.js"],
@@ -57,7 +57,7 @@ const projects = [
     title: "Automated Deployment of FTP, DHCP, and Mailing Servers on Debian",
     description: (
       <>
-        Automated the setup and deployment of FTP, DHCP, and mailing servers using Bash scripting on Debian-based systems, reducing the need for manual intervention.
+        Automated the setup of FTP, DHCP, and mailing servers using Bash on Debian.
       </>
     ),
     tools: ["Bash Scripting", "Debian"],

@@ -9,10 +9,15 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Image from 'next/image';
 
 const screenshots = [
+  '/ngsoc/55.jpeg',
   '/ngsoc/1.jpeg',
   '/ngsoc/2.jpeg',
   '/ngsoc/3.jpeg',
   '/ngsoc/4.jpeg',
+  '/ngsoc/9.jpeg',
+  '/ngsoc/10.jpeg',
+  '/ngsoc/11.jpeg',
+  '/ngsoc/44.jpeg',
 ];
 
 const Ngsoc = () => {
@@ -75,6 +80,9 @@ const Ngsoc = () => {
               <Badge variant="secondary" className="bg-red-500/20 text-red-500">Graylog</Badge>
               <Badge variant="secondary" className="bg-red-500/20 text-red-500">Suricata</Badge>
               <Badge variant="secondary" className="bg-red-500/20 text-red-500">VirusTotal API</Badge>
+              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Sysmon</Badge>
+              <Badge variant="secondary" className="bg-red-500/20 text-red-500">PacketBeat</Badge>
+              <Badge variant="secondary" className="bg-red-500/20 text-red-500">Yara</Badge>
             </div>
           </CardContent>
         </Card>
