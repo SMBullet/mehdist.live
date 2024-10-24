@@ -59,6 +59,14 @@ const tryHackMeData = {
       image: "/certifications/THM-STSEMYLBE9.png",
     },
   ],
+  certifications: [
+    {
+      title: "Web Fundamentals",
+      institution: "TryHackMe",
+      year: "2024",
+      image: "/certifications/THM-KJNUGCNEDH.png",
+    },
+  ],
 };
 
 const Certifications = () => {
