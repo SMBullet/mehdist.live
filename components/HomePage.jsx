@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
 import { FaGraduationCap, FaShieldAlt } from 'react-icons/fa';
 import { ExternalLink } from 'lucide-react';
-import { Separator } from "@/components/ui/separator";
 import { Badge } from './ui/badge';
+import Image from 'next/image';  // Importing Next.js Image component
 
 const Home = () => {
   return (
@@ -20,19 +20,33 @@ const Home = () => {
         <Card className="border shadow-xl rounded-2xl bg-transparent">
           <CardContent className="p-8 sm:p-12">
             <div className="flex flex-col">
-              <h1 className="text-5xl sm:text-7xl font-extrabold mb-4 animate-moving-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
-                Mehdi Stoti
-              </h1>
-              <p className="text-2xl sm:text-3xl mb-4 text-gray-300 flex items-center">
-                <FaGraduationCap className="mr-2 text-3xl sm:text-4xl" />
-                <span>Cybersecurity Engineering Student</span>
-                <FaShieldAlt className="ml-2 text-3xl sm:text-4xl" />
-              </p>
+              {/* Flex container for logo, name, and role */}
+              <div className="flex items-center mb-4">
+                <Image 
+                  src="/my.svg"
+                  alt="Logo" 
+                  className="mr-0 pr-0 hidden md:block transition-transform transform hover:scale-105" // Added hover animation
+                  width={300}
+                  height={300}
+                  onContextMenu={(e) => e.preventDefault()} // Prevent right-click
+                />
+                <div className="flex flex-col ml-0 pl-0">
+                  <h1 className="text-5xl sm:text-7xl font-extrabold animate-moving-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
+                    Mehdi Stoti
+                  </h1>
+                  <p className="text-2xl sm:text-3xl mb-4 text-gray-300 flex items-center">
+                    <FaGraduationCap className="mr-2 text-3xl sm:text-4xl" />
+                    <span>Cybersecurity Engineering Student</span>
+                    <FaShieldAlt className="ml-2 text-3xl sm:text-4xl" />
+                  </p>
+                </div>
+              </div>
+              
               <div className="space-y-4 text-gray-400 text-lg sm:text-xl mb-6">
                 <p>
-                I’m passionate about cybersecurity and eager to apply my skills, especially in offensive security like penetration testing. 
-                I also focus on auditing, defensive security, IAM, PAM, cloud security, and automating security processes.
-                I look forward to contributing to this field.
+                  I’m passionate about cybersecurity and eager to apply my skills, especially in offensive security like penetration testing. 
+                  I also focus on auditing, defensive security, IAM, PAM, cloud security, and automating security processes.
+                  I look forward to contributing to this field.
                 </p>
                 <Badge variant="secondary" className="bg-red-500/20 text-red-500">
                   Seeking an internship to gain practical experience and contribute to projects in cybersecurity.
