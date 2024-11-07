@@ -64,6 +64,12 @@ const tryHackMeData = {
       year: "2024",
       image: "/certifications/THM-KJNUGCNEDH.png",
     },
+    {
+      title: "Pre Security",
+      institution: "TryHackMe",
+      year: "2024",
+      image: "/certifications/THM-DB7NNTMRWV.png",
+    },
   ],
 };
 
