@@ -22,14 +22,6 @@ const Home = () => {
             <div className="flex flex-col">
               {/* Flex container for logo, name, and role */}
               <div className="flex items-center mb-4">
-                <Image 
-                  src="/my.svg"
-                  alt="Logo" 
-                  className="mr-0 pr-0 hidden md:block transition-transform transform hover:scale-105" // Added hover animation
-                  width={300}
-                  height={300}
-                  onContextMenu={(e) => e.preventDefault()} // Prevent right-click
-                />
                 <div className="flex flex-col ml-0 pl-0">
                   <h1 className="text-5xl sm:text-7xl font-extrabold animate-moving-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
                     Mehdi Stoti
