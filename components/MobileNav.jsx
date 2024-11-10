@@ -3,10 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { FaHome, FaGraduationCap, FaCogs, FaBriefcase, FaProjectDiagram } from "react-icons/fa";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { keyframes } from "@emotion/react";
 
 // Define keyframes for the bounce animation (if needed elsewhere)
-const bounceAnimation = keyframes`
+const bounceAnimation = `
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
@@ -19,11 +18,11 @@ const bounceAnimation = keyframes`
 `;
 
 const links = [
-  { name: "Home", path: "#home", icon: <FaHome /> },
-  { name: "Education", path: "#education", icon: <FaGraduationCap /> },
-  { name: "Skills", path: "#skills", icon: <FaCogs /> },
-  { name: "Experience", path: "#experience", icon: <FaBriefcase /> },
-  { name: "Projects", path: "#projects", icon: <FaProjectDiagram /> },
+  { name: "Home", path: "home", icon: <FaHome /> },
+  { name: "Education", path: "education", icon: <FaGraduationCap /> },
+  { name: "Skills", path: "skills", icon: <FaCogs /> },
+  { name: "Experience", path: "experience", icon: <FaBriefcase /> },
+  { name: "Projects", path: "projects", icon: <FaProjectDiagram /> },
 ];
 
 const socialLinks = [
@@ -33,7 +32,7 @@ const socialLinks = [
 ];
 
 const MobileNav = () => {
-  const [activeLink, setActiveLink] = useState("#home");
+  const [activeLink, setActiveLink] = useState("home");
   const [isNavVisible, setIsNavVisible] = useState(false);
 
   useEffect(() => {
@@ -42,7 +41,7 @@ const MobileNav = () => {
       const sectionIds = links.map(link => link.path);
 
       for (const id of sectionIds) {
-        const section = document.querySelector(id);
+        const section = document.getElementById(id);
         if (section) {
           const sectionTop = section.offsetTop;
           const sectionHeight = section.offsetHeight;
@@ -60,6 +59,15 @@ const MobileNav = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLinkClick = (path) => {
+    const section = document.getElementById(path);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveLink(path); // Optionally highlight the active link
+      setIsNavVisible(false); // Close the navbar after a link is clicked
+    }
+  };
+
   return (
     <div>
       {/* Toggle Button */}
@@ -73,29 +81,22 @@ const MobileNav = () => {
 
       {/* Mobile Navbar */}
       <div
-        className={`fixed top-1/2 right-0 w-12 h-3/4 bg-gradient-to-r from-[#111827] to-[#1F2937] rounded-l-full flex flex-col items-center py-3 transform -translate-y-1/2 ${
-          isNavVisible ? 'translate-x-0' : 'translate-x-full'
-        } transition-transform duration-500 ease-in-out z-50`}
+        className={`fixed top-1/2 right-0 w-12 h-3/4 bg-gradient-to-r from-[#111827] to-[#1F2937] rounded-l-full flex flex-col items-center py-3 transform -translate-y-1/2 ${isNavVisible ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 ease-in-out z-50`}
       >
         {/* Navigation Icons */}
         <nav className="flex flex-col items-center gap-3 mt-4">
           {links.map((link, index) => (
-            <a
-              href={link.path}
+            <button
               key={index}
+              onClick={() => handleLinkClick(link.path)}
               className={`flex items-center justify-center w-10 h-10 rounded-full text-xl transition-all duration-300 ${
                 link.path === activeLink
-                  ? "bg-juice text-white"
+                  ? "bg-gradient-to-r from-red-500 to-red-700 text-white" // Red gradient background for active link
                   : "text-neutral-300 hover:bg-[#1e385b] hover:text-white"
               }`}
-              onClick={() => {
-                document.querySelector(link.path)?.scrollIntoView({ behavior: 'smooth' });
-                setActiveLink(link.path);
-                setIsNavVisible(false); // Close the navbar after a link is clicked
-              }}
             >
               {link.icon}
-            </a>
+            </button>
           ))}
         </nav>
 

@@ -5,11 +5,11 @@ import { Menu, X } from 'lucide-react';
 import { FaHome, FaGraduationCap, FaCogs, FaBriefcase, FaProjectDiagram, FaLinkedinIn, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const links = [
-    { name: "Home", path: "#home", icon: <FaHome size={18} /> },
-    { name: "Education", path: "#education", icon: <FaGraduationCap size={18} /> },
-    { name: "Skills", path: "#skills", icon: <FaCogs size={18} /> },
-    { name: "Experience", path: "#experience", icon: <FaBriefcase size={18} /> },
-    { name: "Projects", path: "#projects", icon: <FaProjectDiagram size={18} /> },
+    { name: "Home", path: "home", icon: <FaHome size={18} /> },
+    { name: "Education", path: "education", icon: <FaGraduationCap size={18} /> },
+    { name: "Skills", path: "skills", icon: <FaCogs size={18} /> },
+    { name: "Experience", path: "experience", icon: <FaBriefcase size={18} /> },
+    { name: "Projects", path: "projects", icon: <FaProjectDiagram size={18} /> },
 ];
 
 const socialLinks = [
@@ -20,7 +20,7 @@ const socialLinks = [
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [activeLink, setActiveLink] = useState("#home");
+    const [activeLink, setActiveLink] = useState("home");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,7 +28,7 @@ const Nav = () => {
             const sectionIds = links.map(link => link.path);
 
             for (const id of sectionIds) {
-                const section = document.querySelector(id);
+                const section = document.getElementById(id);
                 if (section) {
                     const sectionTop = section.offsetTop;
                     const sectionHeight = section.offsetHeight;
@@ -45,6 +45,15 @@ const Nav = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleLinkClick = (path) => {
+        const section = document.getElementById(path);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setActiveLink(path); // Optionally highlight the active link
+            setIsOpen(false); // Close the mobile menu
+        }
+    };
+
     return (
         <nav className="bg-gradient-to-r from-[#111827] to-[#1F2937] p-4 shadow-lg rounded-full max-w-5xl mx-auto fixed top-8 left-0 right-0 z-50">
             <div className="container mx-auto flex justify-between items-center">
@@ -52,12 +61,12 @@ const Nav = () => {
                 <div className="flex-1">
                     <div className="hidden md:flex space-x-6">
                         {links.map((link, index) => (
-                            <a
-                                href={link.path}
+                            <button
                                 key={index}
+                                onClick={() => handleLinkClick(link.path)}
                                 className={`relative flex items-center space-x-2 py-2 px-4 text-sm font-bold tracking-wide rounded-full transition-all duration-300 ${
                                     link.path === activeLink
-                                        ? "bg-juice text-white"
+                                        ? "bg-gradient-to-r from-red-500 to-red-700 text-white" // Red gradient for active link
                                         : "hover:bg-[#1e385b] text-white"
                                 }`}
                             >
@@ -66,7 +75,7 @@ const Nav = () => {
                                 {link.path === activeLink && (
                                     <span className="absolute inset-0 rounded-full opacity-50 transition-all duration-300"></span>
                                 )}
-                            </a>
+                            </button>
                         ))}
                     </div>
                     <button
@@ -97,22 +106,21 @@ const Nav = () => {
             {isOpen && (
                 <div className="md:hidden mt-4 rounded-full bg-gradient-to-r from-[#111827] to-[#1F2937] shadow-lg">
                     {links.map((link, index) => (
-                        <a
-                            href={link.path}
+                        <button
                             key={index}
+                            onClick={() => handleLinkClick(link.path)}
                             className={`relative flex items-center space-x-2 py-3 px-6 text-sm font-bold tracking-wide rounded-full transition-all duration-300 ${
                                 link.path === activeLink
-                                    ? "bg-juice text-white"
+                                    ? "bg-gradient-to-r from-red-500 to-red-700 text-white" // Red gradient for active link
                                     : "text-white hover:bg-[#0e1a2a]"
                             }`}
-                            onClick={() => setIsOpen(false)}
                         >
                             {link.icon}
                             <span>{link.name}</span>
                             {link.path === activeLink && (
                                 <span className="absolute inset-0 rounded-full bg-white opacity-50 transition-all duration-300"></span>
                             )}
-                        </a>
+                        </button>
                     ))}
                 </div>
             )}
