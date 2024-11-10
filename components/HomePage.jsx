@@ -35,7 +35,7 @@ const Home = () => {
               
               <div className="space-y-4 text-gray-400 text-lg sm:text-xl mb-6">
                 <p>
-                  I'm passionate about cybersecurity and eager to apply my skills, especially in offensive security like penetration testing. 
+                  I&apos;m passionate about cybersecurity and eager to apply my skills, especially in offensive security like penetration testing. 
                   I also focus on auditing, defensive security, IAM, PAM, cloud security, and automating security processes.
                   I look forward to contributing to this field.
                 </p>
