@@ -8,73 +8,69 @@ import SearchBox from '@/components/SearchBox';
 
 const hackTheBoxMachines = [
     {
+        title: "Administrator",
+        image: "/HackTheBox/Boxes/Administrator.png",
+        link: "/writeups/hackthebox/administrator",
+        readTime: 0
+    },
+    {
         title: "Cicada",
         image: "/HackTheBox/Boxes/cicada.png",
         link: "/writeups/hackthebox/cicada",
-        description: "A complex box featuring advanced cryptography and steganography challenges.",
         readTime: 0
     },
     {
         title: "GreenHorn",
         image: "/HackTheBox/Boxes/GreenHorn.png",
         link: "/writeups/hackthebox/greenhorn",
-        description: "Entry-level machine perfect for practicing web exploitation basics.",
         readTime: 0
     },
     {
         title: "Instant",
         image: "/HackTheBox/Boxes/Instant.png",
         link: "/writeups/hackthebox/instant",
-        description: "Fast-paced box focusing on service enumeration and privilege escalation.",
         readTime: 0
     },
     {
         title: "Sightless",
         image: "/HackTheBox/Boxes/Sightless.png",
         link: "/writeups/hackthebox/sightless",
-        description: "Blind SQL injection and creative lateral movement techniques.",
         readTime: 0
     },
     {
         title: "Chemistry",
         image: "/HackTheBox/Boxes/Chemistry.png",
         link: "/writeups/hackthebox/chemistry",
-        description: "Chemical formula parsing vulnerabilities and buffer overflows.",
         readTime: 0
     },
     {
         title: "Archetype",
         image: "/HackTheBox/Boxes/Archetype.png",
         link: "/writeups/hackthebox/archetype",
-        description: "Windows machine showcasing common misconfigurations.",
         readTime: 0
     },
     {
         title: "Oopsie",
         image: "/HackTheBox/Boxes/Oopsie.png",
         link: "/writeups/hackthebox/oopsie",
-        description: "Web application exploitation and privilege escalation chains.",
         readTime: 0
     },
     {
         title: "Gunship",
         image: "/HackTheBox/Boxes/Gunship.png",
         link: "/writeups/hackthebox/gunship",
-        description: "Advanced binary exploitation and reverse engineering challenges.",
         readTime: 0
     },
     {
         title: "Blurry",
         image: "/HackTheBox/Boxes/Blurry.png",
         link: "/writeups/hackthebox/blurry",
-        description: "Image processing vulnerabilities and server-side template injection.",
         readTime: 0
     },
     {
         title: "Vaccine",
         image: "/HackTheBox/Boxes/Vaccine.png",
         link: "/writeups/hackthebox/vaccine",
-        description: "SQL injection and PostgreSQL privilege escalation techniques.",
         readTime: 0
     },
 ];
@@ -173,9 +169,6 @@ const Writeups = () => {
                         {machine.readTime} min read
                       </div>
                     </div>
-                    <p className="text-sm text-gray-300 line-clamp-2 mb-2">
-                      {machine.description}
-                    </p>
                     <div className="h-0.5 w-0 bg-red-500 transition-all duration-300 group-hover:w-full" />
                   </div>
                   
