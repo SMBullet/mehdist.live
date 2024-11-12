@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Clock } from 'lucide-react';
+import { Clock, FileText } from 'lucide-react';
 import SearchBox from '@/components/SearchBox';
 
 const hackTheBoxMachines = [
@@ -111,6 +111,29 @@ const Writeups = () => {
           <h1 className="text-6xl sm:text-7xl font-extrabold mb-6 leading-tight animate-moving-gradient bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-red-400 to-red-600">
             My Writeups
           </h1>
+          
+          {/* Full-width methodology card */}
+          <div className="w-full mb-12">
+            <div className="border border-gray-700 rounded-2xl bg-gray-900/20 shadow-lg p-8">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl font-bold mb-4 text-gray-200">CTF Methodology</h2>
+                <p className="text-gray-400 mb-6 text-lg">
+                  Discover my systematic approach to Capture The Flag challenges. Learn about the tools, techniques, and strategies I use to tackle various security challenges.
+                </p>
+                <div className="flex justify-center">
+                  <motion.a
+                    href="/My-CTF-Methodology"
+                    className="flex items-center space-x-3 bg-red-500 text-white py-3 px-6 rounded-full hover:bg-red-600 transition duration-300 text-lg font-medium shadow-md"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span>View My Methodology</span>
+                    <FileText className="w-5 h-5" />
+                  </motion.a>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* HackTheBox Section */}
