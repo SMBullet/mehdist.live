@@ -42,9 +42,11 @@ const Skills = () => {
       icon: Shield,
       skills: [
         { name: "Ethical Hacking" },
-        { name: "AppSec Testing" },
-        { name: "Wazuh" },
-        { name: "ELK Stack" },
+        { name: "Red Teaming" },
+        { name: "Active Directory Pentesting" },
+        { name: "Linux" },
+        { name: "Web app Pentesting" },
+        { name: "SOC - SIEM - EDR - XDR" },
         { name: "Forensics" },
         { name: "Cryptography" },
       ]
@@ -55,6 +57,21 @@ const Skills = () => {
       skills: [
         { name: "ISO 27001" },
         { name: "NIST" },
+        { name: "PCA/PRA" },
+        { name: "EBIOS" },
+      ]
+    },
+    {
+      title: "DevSecOps",
+      icon: Shield,
+      skills: [
+        { name: "Jenkins" },
+        { name: "CI/CD" },
+        { name: "Terraform" },
+        { name: "Docker" },
+        { name: "Kubernetes" },
+        { name: "SAST/DAST" },
+        { name: "Bash" },
       ]
     },
     {
@@ -62,8 +79,8 @@ const Skills = () => {
       icon: Cloud,
       skills: [
         { name: "AWS", icon: "SiAws" },
-        { name: "VMware ESXI", icon: "SiVmware" },
         { name: "Docker", icon: "SiDocker" },
+        { name: "VMware ESXI", icon: "SiVmware" },
       ]
     },
     {
@@ -73,6 +90,8 @@ const Skills = () => {
         { name: "Linux", icon: "SiLinux" },
         { name: "Windows Server", icon: "SiWindows" },
         { name: "System Hardening" },
+        { name: "Wazuh" },
+        { name: "ELK Stack" },
         { name: "Active Directory", icon: "SiMicrosoftactivedirectory" },
         { name: "Zabbix", icon: "SiZabbix" },
       ]
