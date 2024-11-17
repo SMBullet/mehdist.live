@@ -63,6 +63,17 @@ const projects = [
     tools: ["Bash Scripting", "Debian"],
     github: "https://github.com/Eljakani/FDM",
     link: "/projects/FDM"
+  },
+  {
+    title: "Hardening as a Code",
+    description: (
+      <>
+        A shell script that hardens Unix systems, mainly Debian and Ubuntu, following the ANSSI recommendations. It enhances system security by hardening GRUB, kernel, and network settings, while also restricting services and access.
+      </>
+    ),
+    tools: ["Shell", "Linux", "Security"],
+    github: "https://github.com/SMBullet/Unix-Hardening-Script",
+    link: "/projects/hardening-as-a-code"
   }
 ];
 
