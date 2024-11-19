@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
-import Image from "next/image"; // Importing Next.js Image component
+import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';  // Importing Next.js Image component
 
 const certificationsData = [
   {
@@ -14,7 +14,7 @@ const certificationsData = [
     link: `https://secops.group/certificate-validation`,
     image: "/certifications/1707232957468.jpeg",
     certificateId: "8377487",
-    name: "Mehdi",
+    name: "Mehdi"
   },
   {
     title: "ISO/IEC 27001 Information Security Associate™",
@@ -76,31 +76,6 @@ const tryHackMeData = {
 const Certifications = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-6 sm:p-8 mt-16" id="certifications">
-      {/* Back to Portfolio Link */}
-      <div className="mb-8 w-full text-center">
-        <a
-          href="#"
-          onClick={() => window.history.back()} // Mimics the browser's back button
-          className="inline-flex items-center text-gray-300 hover:text-red-500"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-5 h-5 mr-2"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-            />
-          </svg>
-          Back to Portfolio
-        </a>
-      </div>
-
       <motion.div
         className="w-full max-w-6xl"
         initial={{ opacity: 0, y: 20 }}
@@ -115,15 +90,15 @@ const Certifications = () => {
             <p className="text-lg text-gray-400 text-center mb-8">
               Here are my professional certifications that demonstrate my skills and commitment to cybersecurity.
             </p>
-
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {certificationsData.map((certification, index) => (
                 <div key={index} className="flex flex-col bg-gray-900/20 border border-gray-700 rounded-lg p-4">
-                  <Image
-                    src={certification.image}
-                    alt={`${certification.title} Image`}
+                  <Image 
+                    src={certification.image} 
+                    alt={`${certification.title} Image`} 
                     className="mb-2 rounded-md"
-                    width={500} // Specify appropriate width
+                    width={500}  // Specify appropriate width
                     height={300} // Specify appropriate height
                   />
                   <h2 className="text-2xl font-bold text-gray-200">{certification.title}</h2>
@@ -134,9 +109,9 @@ const Certifications = () => {
                   {certification.name && (
                     <p className="text-gray-400 mt-1">Name: {certification.name}</p>
                   )}
-                  <a
-                    href={certification.link}
-                    target="_blank"
+                  <a 
+                    href={certification.link} 
+                    target="_blank" 
                     rel="noopener noreferrer"
                     className="mt-2 inline-flex items-center space-x-2 text-red-500 hover:text-red-600 transition duration-300"
                   >
@@ -151,9 +126,9 @@ const Certifications = () => {
             <div className="mt-10 flex flex-col items-start">
               <h2 className="text-3xl font-bold mb-4 text-gray-200">My TryHackMe Badge</h2>
               <a href={tryHackMeData.badge.link} target="_blank" rel="noopener noreferrer">
-                <Image
-                  src={tryHackMeData.badge.imageUrl}
-                  alt={tryHackMeData.badge.alt}
+                <Image 
+                  src={tryHackMeData.badge.imageUrl} 
+                  alt={tryHackMeData.badge.alt} 
                   className="rounded-lg shadow-md mb-6"
                   width={300} // Specify appropriate width
                   height={150} // Specify appropriate height
@@ -167,9 +142,9 @@ const Certifications = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {tryHackMeData.certifications.map((certification, index) => (
                   <div key={index} className="flex flex-col bg-gray-900/20 border border-gray-700 rounded-lg p-4">
-                    <Image
-                      src={certification.image}
-                      alt={`${certification.title} Image`}
+                    <Image 
+                      src={certification.image} 
+                      alt={`${certification.title} Image`} 
                       className="mb-2 rounded-md"
                       width={500} // Specify appropriate width
                       height={300} // Specify appropriate height
@@ -184,23 +159,23 @@ const Certifications = () => {
             {/* AWS Badges */}
             <div className="mt-10">
               <h2 className="text-3xl font-bold mb-4 text-gray-200">My AWS Badges</h2>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4"> {/* Use flex-wrap for better alignment */}
                 {awsBadgesData.map((badge, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col bg-gray-900/20 border border-gray-700 rounded-lg p-2 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+                  <div 
+                    key={index} 
+                    className="flex flex-col bg-gray-900/20 border border-gray-700 rounded-lg p-2 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg" 
                   >
-                    <a
-                      href={badge.link}
-                      target="_blank"
+                    <a 
+                      href={badge.link} 
+                      target="_blank" 
                       rel="noopener noreferrer"
                       className="flex flex-col items-center"
                     >
-                      <Image
-                        src={badge.image}
-                        alt={badge.alt}
-                        className="rounded-md w-28 h-28 transition duration-300 hover:scale-105"
-                        width={112} // Specify appropriate width
+                      <Image 
+                        src={badge.image} 
+                        alt={badge.alt} 
+                        className="rounded-md w-28 h-28 transition duration-300 hover:scale-105" // Increased size
+                        width={112}  // Specify appropriate width
                         height={112} // Specify appropriate height
                       />
                     </a>
@@ -213,6 +188,6 @@ const Certifications = () => {
       </motion.div>
     </div>
   );
-};
+}
 
 export default Certifications;
