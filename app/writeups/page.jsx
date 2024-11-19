@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Clock, FileText } from 'lucide-react';
+import { FaArrowLeft } from 'react-icons/fa';
 import SearchBox from '@/components/SearchBox';
 
 const hackTheBoxMachines = [
@@ -94,6 +95,11 @@ const Writeups = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredMachines, setFilteredMachines] = useState(hackTheBoxMachines);
 
+  const handleBackClick = (e) => {
+    e.preventDefault();
+    window.history.back();
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center p-6 sm:p-8" id="writeups">
       <motion.div
@@ -102,6 +108,15 @@ const Writeups = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
+        {/* Back to Portfolio Link */}
+        <a
+          href="#"
+          onClick={handleBackClick}
+          className="inline-flex items-center text-gray-300 hover:text-red-500 mb-8"
+        >
+          <FaArrowLeft className="mr-2" /> Back to Portfolio
+        </a>
+
         <motion.div 
           className="text-center mb-12 pt-10" 
           initial={{ opacity: 0, y: -20 }}
@@ -204,10 +219,9 @@ const Writeups = () => {
             ))}
           </motion.div>
         </div>
-
       </motion.div>
     </div>
   );
-}
+};
 
 export default Writeups;
