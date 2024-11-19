@@ -77,27 +77,29 @@ const Certifications = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-6 sm:p-8 mt-16" id="certifications">
       {/* Back to Portfolio Link */}
-      <a
-        href="#"
-        onClick={() => window.history.back()} // Mimics the browser's back button
-        className="inline-flex items-center text-gray-300 hover:text-red-500 mb-8"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-5 h-5 mr-2"
+      <div className="mb-8 w-full text-center">
+        <a
+          href="#"
+          onClick={() => window.history.back()} // Mimics the browser's back button
+          className="inline-flex items-center text-gray-300 hover:text-red-500"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-          />
-        </svg>
-        Back to Portfolio
-      </a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-5 h-5 mr-2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+            />
+          </svg>
+          Back to Portfolio
+        </a>
+      </div>
 
       <motion.div
         className="w-full max-w-6xl"
