@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
+import { FaArrowLeft } from 'react-icons/fa';
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';  // Importing Next.js Image component
 
@@ -45,6 +46,14 @@ const awsBadgesData = [
   },
 ];
 
+const hackTheBoxData = {
+  badge: {
+    imageUrl: "/HackTheBox/HTB-badge.png",
+    link: "https://app.hackthebox.com/profile/1227600",
+    alt: "Hack The Box Badge",
+  },
+};
+
 const tryHackMeData = {
   badge: {
     imageUrl: "https://tryhackme-badges.s3.amazonaws.com/MSBullet.png",
@@ -74,8 +83,25 @@ const tryHackMeData = {
 };
 
 const Certifications = () => {
+
+  const handleBackClick = (e) => {
+    e.preventDefault();
+    window.history.back();
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center p-6 sm:p-8 mt-16" id="certifications">
+    <div className="min-h-screen flex items-center justify-center p-6 sm:p-8 mt-16 relative" id="certifications">
+      <motion.a
+        href="#"
+        onClick={handleBackClick}
+        className="absolute top-6 left-6 sm:top-8 sm:left-8 inline-flex items-center text-gray-300 hover:text-red-500"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <FaArrowLeft className="mr-2" /> Back to Portfolio
+      </motion.a>
+
       <motion.div
         className="w-full max-w-6xl"
         initial={{ opacity: 0, y: 20 }}
@@ -120,6 +146,20 @@ const Certifications = () => {
                   </a>
                 </div>
               ))}
+            </div>
+
+            {/* Hack The Box Badge */}
+            <div className="mt-10 flex flex-col items-start">
+              <h2 className="text-3xl font-bold mb-4 text-gray-200">My Hack The Box Profile</h2>
+              <a href={hackTheBoxData.badge.link} target="_blank" rel="noopener noreferrer">
+                <Image 
+                  src={hackTheBoxData.badge.imageUrl} 
+                  alt={hackTheBoxData.badge.alt} 
+                  className="rounded-lg shadow-md mb-6"
+                  width={300} // Specify appropriate width
+                  height={150} // Specify appropriate height
+                />
+              </a>
             </div>
 
             {/* TryHackMe Badge */}

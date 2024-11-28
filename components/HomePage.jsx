@@ -62,7 +62,6 @@ const Home = () => {
                   <p className="text-gray-400 mb-6">View my professional certifications and achievements in cybersecurity.</p>
                   <div className="flex justify-start mt-auto">
                     <a 
-                      target="_blank"
                       href="/certifications" 
                       className="flex items-center space-x-2 bg-red-500 text-white py-2 px-4 rounded-full hover:bg-red-600 transition duration-300 text-base shadow-md"
                     >
