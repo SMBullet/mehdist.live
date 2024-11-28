@@ -91,16 +91,20 @@ const Certifications = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6 sm:p-8 mt-16 relative" id="certifications">
-      <motion.a
-        href="#"
-        onClick={handleBackClick}
-        className="absolute top-6 left-6 sm:top-8 sm:left-8 inline-flex items-center text-gray-300 hover:text-red-500"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <FaArrowLeft className="mr-2" /> Back to Portfolio
-      </motion.a>
+      {/* Back to Portfolio Button */}
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 w-full max-w-6xl mx-auto">
+        <motion.a
+          href="#"
+          onClick={handleBackClick}
+          className="inline-flex items-center text-gray-300 hover:text-red-500 transition duration-300 ease-in-out transform hover:scale-105"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <FaArrowLeft className="mr-2" />
+          <span className="hidden sm:inline">Back to Portfolio</span>
+        </motion.a>
+      </div>
 
       <motion.div
         className="w-full max-w-6xl"
