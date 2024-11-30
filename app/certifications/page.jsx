@@ -238,4 +238,7 @@ const Certifications = memo(() => {
   );
 });
 
+// Add the displayName to the memoized component
+Certifications.displayName = "Certifications";
+
 export default Certifications;
