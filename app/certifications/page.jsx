@@ -122,7 +122,7 @@ const Certifications = memo(() => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {certificationsData.map(({ image, title, institution, year, certificateId, name, link }, index) => (
-                <div key={index} className="flex flex-col bg-gray-900/20 border border-gray-700 rounded-lg p-4">
+                <div key={certificateId || index} className="flex flex-col bg-gray-900/20 border border-gray-700 rounded-lg p-4">
                   <Image
                     src={image}
                     alt={`${title} Image`}

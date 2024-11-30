@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Markdown from 'react-markdown';
-import dynamic from 'next/dynamic';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Copy, Check } from 'lucide-react';
@@ -53,6 +52,8 @@ const CopyButton = React.memo(({ code }) => {
     </button>
   );
 });
+
+CopyButton.displayName = 'CopyButton'; // Set displayName for memoized component
 
 const TableOfContents = React.memo(({ headings, onHeadingClick }) => {
   const [activeSection, setActiveSection] = useState('');
@@ -136,6 +137,8 @@ const TableOfContents = React.memo(({ headings, onHeadingClick }) => {
     </motion.div>
   );
 });
+
+TableOfContents.displayName = 'TableOfContents'; // Set displayName for memoized component
 
 const MethodologyPage = () => {
   const [headings, setHeadings] = useState([]);
@@ -307,5 +310,7 @@ const MethodologyPage = () => {
     </>
   );
 };
+
+MethodologyPage.displayName = 'MethodologyPage'; // Set displayName for memoized component
 
 export default React.memo(MethodologyPage);

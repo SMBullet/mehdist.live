@@ -8,17 +8,17 @@ import { FaArrowLeft } from 'react-icons/fa';
 import SearchBox from '@/components/SearchBox';
 
 const hackTheBoxMachines = [
-    { title: "Administrator", image: "/HackTheBox/Boxes/Administrator.png", link: "/writeups/hackthebox/administrator", readTime: 0 },
-    { title: "Cicada", image: "/HackTheBox/Boxes/cicada.png", link: "/writeups/hackthebox/cicada", readTime: 0 },
-    { title: "GreenHorn", image: "/HackTheBox/Boxes/GreenHorn.png", link: "/writeups/hackthebox/greenhorn", readTime: 0 },
-    { title: "Instant", image: "/HackTheBox/Boxes/Instant.png", link: "/writeups/hackthebox/instant", readTime: 0 },
-    { title: "Sightless", image: "/HackTheBox/Boxes/Sightless.png", link: "/writeups/hackthebox/sightless", readTime: 0 },
-    { title: "Chemistry", image: "/HackTheBox/Boxes/Chemistry.png", link: "/writeups/hackthebox/chemistry", readTime: 0 },
-    { title: "Archetype", image: "/HackTheBox/Boxes/Archetype.png", link: "/writeups/hackthebox/archetype", readTime: 0 },
-    { title: "Oopsie", image: "/HackTheBox/Boxes/Oopsie.png", link: "/writeups/hackthebox/oopsie", readTime: 0 },
-    { title: "Gunship", image: "/HackTheBox/Boxes/Gunship.png", link: "/writeups/hackthebox/gunship", readTime: 0 },
-    { title: "Blurry", image: "/HackTheBox/Boxes/Blurry.png", link: "/writeups/hackthebox/blurry", readTime: 0 },
-    { title: "Vaccine", image: "/HackTheBox/Boxes/Vaccine.png", link: "/writeups/hackthebox/vaccine", readTime: 0 },
+  { title: "Administrator", image: "/HackTheBox/Boxes/Administrator.png", link: "/writeups/hackthebox/administrator", readTime: 0 },
+  { title: "Cicada", image: "/HackTheBox/Boxes/cicada.png", link: "/writeups/hackthebox/cicada", readTime: 0 },
+  { title: "GreenHorn", image: "/HackTheBox/Boxes/GreenHorn.png", link: "/writeups/hackthebox/greenhorn", readTime: 0 },
+  { title: "Instant", image: "/HackTheBox/Boxes/Instant.png", link: "/writeups/hackthebox/instant", readTime: 0 },
+  { title: "Sightless", image: "/HackTheBox/Boxes/Sightless.png", link: "/writeups/hackthebox/sightless", readTime: 0 },
+  { title: "Chemistry", image: "/HackTheBox/Boxes/Chemistry.png", link: "/writeups/hackthebox/chemistry", readTime: 0 },
+  { title: "Archetype", image: "/HackTheBox/Boxes/Archetype.png", link: "/writeups/hackthebox/archetype", readTime: 0 },
+  { title: "Oopsie", image: "/HackTheBox/Boxes/Oopsie.png", link: "/writeups/hackthebox/oopsie", readTime: 0 },
+  { title: "Gunship", image: "/HackTheBox/Boxes/Gunship.png", link: "/writeups/hackthebox/gunship", readTime: 0 },
+  { title: "Blurry", image: "/HackTheBox/Boxes/Blurry.png", link: "/writeups/hackthebox/blurry", readTime: 0 },
+  { title: "Vaccine", image: "/HackTheBox/Boxes/Vaccine.png", link: "/writeups/hackthebox/vaccine", readTime: 0 },
 ];
 
 const container = {
@@ -171,5 +171,8 @@ const Writeups = React.memo(() => {
     </div>
   );
 });
+
+// Add the displayName to the memoized component
+Writeups.displayName = 'Writeups';
 
 export default Writeups;
