@@ -1,11 +1,10 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Shield, Cloud, Network, Lock } from 'lucide-react';
-import * as SiIcons from 'react-icons/si';
+import { Code, Shield, Cloud, Network, Lock } from "lucide-react";
+import * as SiIcons from "react-icons/si";
 
 // SkillBadge component
 const SkillBadge = ({ iconName, text }) => {
@@ -34,8 +33,8 @@ const Skills = () => {
         { name: "Python", icon: "SiPython" },
         { name: "C", icon: "SiC" },
         { name: "C++", icon: "SiCplusplus" },
-        { name: "Bash Scripting", icon: "SiBash" }
-      ]
+        { name: "Bash Scripting", icon: "SiBash" },
+      ],
     },
     {
       title: "Cybersecurity",
@@ -49,7 +48,7 @@ const Skills = () => {
         { name: "SOC - SIEM - EDR - XDR" },
         { name: "Forensics" },
         { name: "Cryptography" },
-      ]
+      ],
     },
     {
       title: "Security Standards",
@@ -59,7 +58,7 @@ const Skills = () => {
         { name: "NIST" },
         { name: "PCA/PRA" },
         { name: "EBIOS" },
-      ]
+      ],
     },
     {
       title: "DevSecOps",
@@ -72,7 +71,7 @@ const Skills = () => {
         { name: "Kubernetes" },
         { name: "SAST/DAST" },
         { name: "Bash" },
-      ]
+      ],
     },
     {
       title: "Cloud & Virtualization",
@@ -81,7 +80,7 @@ const Skills = () => {
         { name: "AWS", icon: "SiAws" },
         { name: "Docker", icon: "SiDocker" },
         { name: "VMware ESXI", icon: "SiVmware" },
-      ]
+      ],
     },
     {
       title: "Network & System Administration",
@@ -94,18 +93,13 @@ const Skills = () => {
         { name: "ELK Stack" },
         { name: "Active Directory", icon: "SiMicrosoftactivedirectory" },
         { name: "Zabbix", icon: "SiZabbix" },
-      ]
+      ],
     },
   ];
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6" id="skills">
-      <motion.div
-        className="w-full max-w-4xl"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="w-full max-w-4xl">
         <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-700 mb-8">
           Skills
         </h2>
@@ -125,7 +119,7 @@ const Skills = () => {
             </Card>
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

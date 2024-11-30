@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Clock, FileText } from 'lucide-react';
@@ -8,81 +8,24 @@ import { FaArrowLeft } from 'react-icons/fa';
 import SearchBox from '@/components/SearchBox';
 
 const hackTheBoxMachines = [
-    {
-        title: "Administrator",
-        image: "/HackTheBox/Boxes/Administrator.png",
-        link: "/writeups/hackthebox/administrator",
-        readTime: 0
-    },
-    {
-        title: "Cicada",
-        image: "/HackTheBox/Boxes/cicada.png",
-        link: "/writeups/hackthebox/cicada",
-        readTime: 0
-    },
-    {
-        title: "GreenHorn",
-        image: "/HackTheBox/Boxes/GreenHorn.png",
-        link: "/writeups/hackthebox/greenhorn",
-        readTime: 0
-    },
-    {
-        title: "Instant",
-        image: "/HackTheBox/Boxes/Instant.png",
-        link: "/writeups/hackthebox/instant",
-        readTime: 0
-    },
-    {
-        title: "Sightless",
-        image: "/HackTheBox/Boxes/Sightless.png",
-        link: "/writeups/hackthebox/sightless",
-        readTime: 0
-    },
-    {
-        title: "Chemistry",
-        image: "/HackTheBox/Boxes/Chemistry.png",
-        link: "/writeups/hackthebox/chemistry",
-        readTime: 0
-    },
-    {
-        title: "Archetype",
-        image: "/HackTheBox/Boxes/Archetype.png",
-        link: "/writeups/hackthebox/archetype",
-        readTime: 0
-    },
-    {
-        title: "Oopsie",
-        image: "/HackTheBox/Boxes/Oopsie.png",
-        link: "/writeups/hackthebox/oopsie",
-        readTime: 0
-    },
-    {
-        title: "Gunship",
-        image: "/HackTheBox/Boxes/Gunship.png",
-        link: "/writeups/hackthebox/gunship",
-        readTime: 0
-    },
-    {
-        title: "Blurry",
-        image: "/HackTheBox/Boxes/Blurry.png",
-        link: "/writeups/hackthebox/blurry",
-        readTime: 0
-    },
-    {
-        title: "Vaccine",
-        image: "/HackTheBox/Boxes/Vaccine.png",
-        link: "/writeups/hackthebox/vaccine",
-        readTime: 0
-    },
+    { title: "Administrator", image: "/HackTheBox/Boxes/Administrator.png", link: "/writeups/hackthebox/administrator", readTime: 0 },
+    { title: "Cicada", image: "/HackTheBox/Boxes/cicada.png", link: "/writeups/hackthebox/cicada", readTime: 0 },
+    { title: "GreenHorn", image: "/HackTheBox/Boxes/GreenHorn.png", link: "/writeups/hackthebox/greenhorn", readTime: 0 },
+    { title: "Instant", image: "/HackTheBox/Boxes/Instant.png", link: "/writeups/hackthebox/instant", readTime: 0 },
+    { title: "Sightless", image: "/HackTheBox/Boxes/Sightless.png", link: "/writeups/hackthebox/sightless", readTime: 0 },
+    { title: "Chemistry", image: "/HackTheBox/Boxes/Chemistry.png", link: "/writeups/hackthebox/chemistry", readTime: 0 },
+    { title: "Archetype", image: "/HackTheBox/Boxes/Archetype.png", link: "/writeups/hackthebox/archetype", readTime: 0 },
+    { title: "Oopsie", image: "/HackTheBox/Boxes/Oopsie.png", link: "/writeups/hackthebox/oopsie", readTime: 0 },
+    { title: "Gunship", image: "/HackTheBox/Boxes/Gunship.png", link: "/writeups/hackthebox/gunship", readTime: 0 },
+    { title: "Blurry", image: "/HackTheBox/Boxes/Blurry.png", link: "/writeups/hackthebox/blurry", readTime: 0 },
+    { title: "Vaccine", image: "/HackTheBox/Boxes/Vaccine.png", link: "/writeups/hackthebox/vaccine", readTime: 0 },
 ];
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
+    transition: { staggerChildren: 0.1 }
   }
 };
 
@@ -91,9 +34,15 @@ const item = {
   show: { opacity: 1, y: 0 }
 };
 
-const Writeups = () => {
+const Writeups = React.memo(() => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredMachines, setFilteredMachines] = useState(hackTheBoxMachines);
+  
+  // Memoize the filtered machines to avoid recalculating on every render
+  const filteredMachines = useMemo(() => {
+    return hackTheBoxMachines.filter(machine =>
+      machine.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery]);
 
   const handleBackClick = (e) => {
     e.preventDefault();
@@ -117,8 +66,8 @@ const Writeups = () => {
           <FaArrowLeft className="mr-2" /> Back to Portfolio
         </a>
 
-        <motion.div 
-          className="text-center mb-12 pt-10" 
+        <motion.div
+          className="text-center mb-12 pt-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -163,8 +112,6 @@ const Writeups = () => {
             <SearchBox
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
-              setFilteredMachines={setFilteredMachines}
-              originalMachines={hackTheBoxMachines}
             />
           </div>
 
@@ -192,6 +139,7 @@ const Writeups = () => {
                       layout="fill" 
                       objectFit="cover" 
                       className="rounded-lg transition-transform duration-300 group-hover:scale-110"
+                      priority
                     />
                     <div className="absolute inset-0 bg-black/40 transition-opacity group-hover:bg-black/20" />
                   </div>
@@ -222,6 +170,6 @@ const Writeups = () => {
       </motion.div>
     </div>
   );
-};
+});
 
 export default Writeups;
