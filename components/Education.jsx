@@ -42,23 +42,34 @@ const Education = () => {
 
             {/* Duration and Location */}
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Calendar className="w-8 h-8 text-red-500" />
-                <p className="text-sm text-gray-400">2019 - Ongoing</p>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-8 h-8 text-red-500" />
-                <p className="text-sm text-gray-400">Marrakech, Morocco</p>
+              <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-2">
+                  <Calendar className="w-8 h-8 text-red-500" />
+                  <p className="text-sm text-gray-400">2019 - Ongoing</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MapPin className="w-8 h-8 text-red-500" />
+                  <p className="text-sm text-gray-400">Marrakech, Morocco</p>
+                </div>
               </div>
             </div>
 
             {/* Degree and Specialization */}
             <div className="space-y-4">
               <p className="text-sm text-gray-400">Pursuing an Engineering degree in:</p>
-              <div className="flex flex-wrap gap-3">
-                <Badge variant="secondary" className="bg-red-500/20 text-red-500">
-                  Cyber Defense Engineering and Embedded Telecommunications Systems
-                </Badge>
+              <div className="flex flex-wrap gap-3 items-center">
+                <a 
+                  href="https://ensa-marrakech.uca.ma/en/training/initial-training/gcdste/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Badge variant="secondary" className="bg-red-500/20 text-red-500">
+                    <div className="flex items-center space-x-2">
+                      <span>Cyber Defense Engineering and Embedded Telecommunications Systems</span>
+                      <ExternalLink className="w-5 h-5" />
+                    </div>
+                  </Badge>
+                </a>
               </div>
             </div>
           </CardContent>
@@ -79,9 +90,14 @@ const Education = () => {
                 </div>
               </div>
               <p className="text-sm text-gray-400">
-                Serving as Vice President of the GCDSTE Club, I contribute to organizing events,
+                Serving as Vice President of the GCDSTE Club, I contributed to organizing events,
                 managing club activities, and fostering a collaborative environment for students
                 interested in Cyber Defense and Embedded Systems.
+              </p>
+              <p className="text-sm text-gray-400">
+                I facilitated team collaboration
+                and organized AiSec 2024, an international AI and cybersecurity summit, developing
+                skills in autonomy, teamwork, and leadership.
               </p>
             </div>
           </CardContent>
